@@ -1,5 +1,5 @@
 org: christiancajusol
-service: api-vision-artificial
+service: api-salary-prediction
 
 provider:
   name: aws
@@ -11,10 +11,10 @@ provider:
 
 functions:
   listar:
-    handler: DetectarEtiquetas.lambda_handler
+    handler: SalaryPrediction.lambda_handler
     events:
       - http:
-          path: /images/etiquetas
+          path: /predecir/sueldo
           method: post
           cors: true
           integration: lambda
